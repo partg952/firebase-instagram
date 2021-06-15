@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
+body{
+  background-color:#401e40;
+  user-select: none;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
 
 .main {
   font-family: 'Quicksand', sans-serif;
@@ -7,8 +13,8 @@
   margin-right: auto;
   margin-top: 100px;
   width: 600px;
-  height: 300px;
-  background-color: aqua;
+  height: 250px;
+  background-color: white;
   display: flex;
   border-radius: 10px;
   overflow: hidden;
@@ -31,8 +37,13 @@
 }
 
 .main form div *{
+  background-color: #622b62;
+  font-weight: 600;
+  color: white;
+  border-radius: 5px;
+  border: 0;
   font-family: 'Quicksand', sans-serif;
-  padding:5px;
+  padding:8px;
   width: 90%;
 }
 
@@ -70,6 +81,7 @@
   content: 'Password Must Be Atleast 6 Characters';
   margin: 10px;
   font-size: 10px;
+  color: black;
 }
 
 .main form div input[type='button']{
@@ -77,4 +89,11 @@
 border-radius: 50px;
 border: 0;
 padding:6px;
+}
+
+h1{
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  margin-left: auto;
+  margin-right: auto;
 }

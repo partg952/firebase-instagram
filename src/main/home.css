@@ -1,0 +1,59 @@
+body{
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav img{
+    height: 60px;
+
+}
+nav *{
+    margin: 10px;
+}
+.🚀 img{
+height: 300px;
+width: 400px;
+}
+.🚀 div{
+    background-color: purple;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.🚀{
+    align-items: center;
+    justify-content: center;
+}
+.🚀 span{
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    
+
+}
+.🚀 span *{
+    margin: 5px;
+}
+.rounded{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50px;
+    font-size: 25px;
+    padding: 10px;
+    background-color: blueviolet;
+    width: 20px;
+    height: 20px;
+}
