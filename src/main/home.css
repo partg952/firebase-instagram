@@ -5,10 +5,18 @@ body{
 }
 
 nav{
+    position: sticky;
+    top: 0;
+    background-color:#401e40;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
+nav div{
+    display: flex;
+}
+
 nav img{
     height: 60px;
 
@@ -18,13 +26,13 @@ nav *{
 }
 .🚀 img{
 height: 300px;
-width: 400px;
+width: 100%;
 }
 .🚀 div{
     background-color: purple;
     padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     width: 400px;
     margin-left: auto;
     margin-right: auto;
@@ -56,4 +64,28 @@ width: 400px;
     background-color: blueviolet;
     width: 20px;
     height: 20px;
+}
+
+input[type='file']{
+    display: none;
+    margin: 10px;
+}
+label{
+    height: 100%;
+    margin-bottom: 20px;
+    background-color: purple;
+    padding: 10px;
+}
+
+#upload-button{
+    margin: 10px;
+}
+
+@media only screen and (max-width: 530px){
+	nav div{
+        display: block;
+    }
+    .🚀 div{
+        width: 300px;
+    }
 }

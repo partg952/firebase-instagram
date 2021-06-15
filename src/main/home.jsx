@@ -18,6 +18,9 @@ export default function Home() {
   const [isLoading,setLoading] = useState(true);
   var file = ''
     useEffect(()=>{
+      if(firebase.auth().currentUser!=null){
+        console.log(firebase.auth().currentUser.email)
+      }
       const div = div_ref.current
       
       firebase.database().ref().on('value',(snapshot,err)=>{
@@ -35,38 +38,17 @@ export default function Home() {
     return (
         <div>
           <nav>
+          
           <img src={image} draggable='false' alt="" />
-          <ExitToAppIcon className='icon' style={{fontSize:'50px'}} onClick={()=>{
-            firebase.auth().signOut()
-            localStorage.removeItem('email')
-            localStorage.removeItem('password')
-            history.push('/')
-          }}/>
-          </nav>
-          <h1> {firebase.auth().currentUser.email} </h1>
           <div>
-         <div ref={div_ref} className="🚀" >
-           <BounceLoader color='blue' loading={isLoading} size={150} />
-           {
-             images.map(items=>{
-               return(
-                 <div>
-                   <span>
-                    <p  className='rounded'> {items.name[0]} </p>
-                   <p> {items.name} </p>
-                   </span>
-                   <img src={items.url} alt="" />
-                   
-                   <p> <strong>{items.name}</strong> {items.caption} </p>
-                 </div>
-               )
-              })
-           }
-         </div>
-         <input type="file" onChange={(e)=>{
+          <input type="file" id='file' onChange={(e)=>{
              file = e.target.files[0]
             }} />
-           <button onClick={()=>{
+            <label htmlFor="file">
+              Select a File
+            </label>
+            <br />
+           <button id='upload-button' onClick={()=>{
              console.log(firebase.auth().currentUser)
              var name = uuidv4();
                 console.log(name)
@@ -88,6 +70,35 @@ export default function Home() {
            </button>
            <br />
            <input type="text" ref={caption} />
+          </div>
+          <ExitToAppIcon className='icon' style={{fontSize:'50px'}} onClick={()=>{
+            firebase.auth().signOut()
+            localStorage.removeItem('email')
+            localStorage.removeItem('password')
+            history.push('/')
+          }}/>
+          </nav>
+          
+          <div>
+         <div ref={div_ref} className="🚀" >
+           <BounceLoader color='blue' loading={isLoading} size={150} />
+           {
+             images.map(items=>{
+               return(
+                 <div>
+                   <span>
+                    <p  className='rounded'> {items.name[0]} </p>
+                   <p> {items.name} </p>
+                   </span>
+                   <img src={items.url} alt="" />
+                   
+                   <p> <strong>{items.name}</strong> {items.caption} </p>
+                 </div>
+               )
+              })
+           }
+         </div>
+         
         </div>
         </div>
     )
